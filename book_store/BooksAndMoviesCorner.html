@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/BooksAndMoviesCorner.css">
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+
+
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+
+
+    <title>Books & Movies Corner</title>
+</head>
+
+<body>
+
+    <header class="header_section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+                <a class="navbar-brand" href="index.html">
+                    <span>
+                        Bostorek
+                    </span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class=""> </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link pl-lg-0" href="index.html">Home <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html"> About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="categories.html">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html"> Blog </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="BooksAndMoviesCorner.html">Books & Movies Corner</a>
+                        </li>
+                    </ul>
+                    <from class="search_form">
+                        <input type="text" class="form-control" placeholder="Search here...">
+                        <button class="" type="submit">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </from>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="movies"></div>
+    <script src="js/main.js"></script>
+
+
+    
+    <!-- ///////////////////////// Books -->
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Google Books Embedded Viewer API Example</title>
+    <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
+    <script type="text/javascript">
+      google.books.load();
+      function initialize() {
+        var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+        var index = document.URL.indexOf('?');
+        if (index > 0) {
+            var bookIsbn = document.URL.substring(index, document.URL.length).split("=")[1]
+            console.log(bookIsbn);
+        }
+        //viewer.load('ISBN:0738531367'); //for test purpose
+        viewer.load('ISBN:'+bookIsbn);
+      }
+      google.books.setOnLoadCallback(initialize);
+    </script>    
+  </head>
+  <body>
+    <div class="container">
+      <div class="text-center" id="viewerCanvas" style="width: 800px; height: 600px"></div>
+    </div>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
+
+
+    <!-- /////////////-->
+
+    <div class="container">
+        <div id="title" class="center">
+          <h1 id="header" class="text-center mt-5">Book Finder</h1>
+          <div class="row">
+            <div id="input" class="input-group mx-auto col-lg-6 col-md-8 col-sm-12">
+              <input id="search-box" type="text" class="form-control" placeholder="Search Books!...">
+              <button id="search" class="btn btn-primary" onclick="">Search</button>
+          </div>
+          </div>
+        </div>
+        <div class="book-list" >
+          <h2 class="text-center">Search Result</h2>
+          <div id="list-output" class="">
+            <div class="row">
+              <!-- card  -->
+  
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+      <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+      <link rel="stylesheet" href="css/style.css">
+      <script src="js/index.js"></script>
+
+</body>
+
+</html>
