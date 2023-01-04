@@ -9,7 +9,7 @@ $(document).ready(function() {
     var apiKey = "key=AIzaSyDtXC7kb6a7xKJdm_Le6_BYoY5biz6s8Lw";
     var placeHldr = '<img src="https://via.placeholder.com/150">';
     var searchData;
-    outputList.innerHTML = `<h3 class="msg">Please Enter A Book Name</h3>`;
+    // outputList.innerHTML = `<h3 class="msg">Please Enter A Book Name</h3>`;
 
     $("#search").click(function() {
       
@@ -53,7 +53,7 @@ $(document).ready(function() {
           author1 = item.volumeInfo.authors;
           publisher1 = item.volumeInfo.publisher;
           bookLink1 = item.volumeInfo.previewLink;
-          bookIsbn = item.volumeInfo.industryIdentifiers[1].identifier
+          previewLink = item.volumeInfo.industryIdentifiers[1].identifier
           bookImg1 = (item.volumeInfo.imageLinks) ? item.volumeInfo.imageLinks.thumbnail : placeHldr ;
   
           item2 = response.items[i+1];
@@ -61,43 +61,49 @@ $(document).ready(function() {
           author2 = item2.volumeInfo.authors;
           publisher2 = item2.volumeInfo.publisher;
           bookLink2 = item2.volumeInfo.previewLink;
-          bookIsbn2 = item2.volumeInfo.industryIdentifiers[1].identifier
+          previewLink = item2.volumeInfo.industryIdentifiers[1].identifier
           bookImg2 = (item2.volumeInfo.imageLinks) ? item2.volumeInfo.imageLinks.thumbnail : placeHldr ;
   
           outputList.innerHTML += '<div class="row mt-4">' +
-                                  formatOutput(bookImg1, title1, author1, publisher1, bookLink1, bookIsbn) +
-                                  formatOutput(bookImg2, title2, author2, publisher2, bookLink2, bookIsbn2) +
-                                  '</div>';
-  
+          formatOutput(bookImg1, title1, author1, publisher1, bookLink1, previewLink) +
+          '</div>';
+
+          outputList.innerHTML += '<div class="row mt-4">' +
+          formatOutput(bookImg2, title2, author2, publisher2, bookLink2, previewLink) +
+          '</div>';
+          
           console.log(outputList);
         }
      }
 
-     function formatOutput(bookImg, title, author, publisher, bookLink, bookIsbn) {
-       // console.log(title + ""+ author +" "+ publisher +" "+ bookLink+" "+ bookImg)
-       var viewUrl = 'book.html?isbn='+bookIsbn; //constructing link for bookviewer
-       var htmlCard = `<div class="col-lg-6">
-         <div class="card" style="">
-           <div class="row no-gutters">
-             <div class="col-md-4">
-               <img src="${bookImg}" class="card-img" alt="...">
-             </div>
-             <div class="col-md-8">
-               <div class="card-body">
-                 <h5 class="card-title">${title}</h5>
-                 <p class="card-text">Author: ${author}</p>
-                 <p class="card-text">Publisher: ${publisher}</p>
-                 <a target="_blank" href="${viewUrl}" class="btn btn-secondary">Read Book</a>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>`
-       return htmlCard;
-     }
+     function formatOutput(bookImg, title, author, publisher, bookLink, previewLink) {
+      // console.log(title + ""+ author +" "+ publisher +" "+ bookLink+" "+ bookImg)
+      var viewUrl = 'https://books.google.jo/books?id='+previewLink +`&hl=&cd=4&source=gbs_api`; //constructing link for bookviewer
+      var htmlCard = `<div class="col-lg-6">
+        <div class="card" style="">
+          <div class="row no-gutters">
+            <div class="col-md-4" style="padding-top: 15px;">
+              <img src="${bookImg}" class="card-img" alt="...">
+            </div>
+                 <div class="col-md-8" style="padding: 10px 10px 10px 10px">
+                 <div class="card-body">
 
-     function displayError() {
-       alert("search term can not be empty!")
-     }
-  
-  });
+                <h5 class="card-title">${title}</h5>
+                <p class="card-text">Author: ${author}</p>
+                <p class="card-text">Publisher: ${publisher}</p>
+                <a target="_blank" href="${viewUrl}" class="btn btn-secondary">Read Book</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`
+      return htmlCard;
+    }
+
+    function displayError() {
+      alert("search term can not be empty!")
+    }
+ 
+ });
+
+

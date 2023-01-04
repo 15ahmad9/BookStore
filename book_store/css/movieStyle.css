@@ -43,7 +43,7 @@
   }
 
   .search-container button {
-    background-color: #017199;
+    background: linear-gradient(-50deg, #007bff, #BAD7E9, #007bff);
     border: none;
     cursor: pointer;
     width: 130px;
