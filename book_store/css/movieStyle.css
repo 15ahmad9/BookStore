@@ -14,9 +14,9 @@
     padding: 3.2em 2.2em;
     background-color: #201f28;
     position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
+    transform: translate(60%, -7%);
+    /* top: 50%;
+    left: 50%; */
     border-radius: 1em;
     box-shadow: 3em 3em 3em rgba(0, 0, 0, 0.5);
     margin-top: 60px;

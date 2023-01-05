@@ -16,9 +16,9 @@
     padding: 3.2em 2.2em;
     background-color: #201f28;
     position: absolute;
-    transform: translate(-50%, -50%);
-    top: 25%;
-    left: 50%;
+    transform: translate(62%, 5%);
+    /* top: 30%;
+    left: 50.5%; */
     border-radius: 1em;
     box-shadow: 3em 3em 3em rgba(0, 0, 0, 0.5);
   }
@@ -226,8 +226,9 @@ transition: 0.7s ease;
     display: grid;
     gap: 20px;
     position: absolute;
-    top: 40%;
-    left: 32%;
+    transform: translate(58%, 14%);
+    /* top: 50%;
+    left: 30%; */
     text-align-last: center;
 }
 
