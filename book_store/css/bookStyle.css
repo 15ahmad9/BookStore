@@ -11,7 +11,7 @@
   }
 
   .container {
-    max-width: 38em;
+    max-width: 37.5em;
     /* width: 60em; */
     padding: 3.2em 2.2em;
     background-color: #201f28;
@@ -171,7 +171,7 @@ padding-top: 30px;
     align-items: center;
   } */
 
-  .card-body h5{
+  .card-body h2{
     font-size: 25px;
     color: white;
     padding-bottom: 20px;
@@ -226,9 +226,10 @@ transition: 0.7s ease;
     display: grid;
     gap: 20px;
     position: absolute;
-    transform: translate(58%, 14%);
-    /* top: 50%;
-    left: 30%; */
+    transform: translate(0, 0);
+    top: 50%;
+    left: 30%;
+    right:30%;
     text-align-last: center;
 }
 
@@ -742,6 +743,22 @@ transition: 0.7s ease;
     padding: 3px 13px 3px;
   
   }
+
+  /* .footer_section {
+     top: 1000%; *
+ position: relative;
+    background-color: white;
+    text-align: center;
+  }
+  .footer_section .p {
+      padding: 25px 0;
+      margin: 0;
+   }
+   .footer_section .a {
+        color: inherit;
+      } */
+   
+  
 
 /* //////////////////////////////////////////// */
   /* container2 */

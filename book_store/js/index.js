@@ -88,7 +88,7 @@ $(document).ready(function() {
                  <div class="col-md-8" style="padding: 10px 10px 10px 10px">
                  <div class="card-body">
 
-                <h5 class="card-title">${title}</h5>
+                <h2 class="card-title">${title}</h2>
                 <p class="card-text">Author: ${author}</p>
                 <p class="card-text">Publisher: ${publisher}</p>
                 <a target="_blank" href="${viewUrl}" class="btn btn-secondary">Read Book</a>
