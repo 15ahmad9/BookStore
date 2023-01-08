@@ -16,12 +16,18 @@
     padding: 3.2em 2.2em;
     background-color: #201f28;
     position: absolute;
-    transform: translate(62%, 5%);
+    transform: translate(110%, 5%);
     /* top: 30%;
     left: 50.5%; */
     border-radius: 1em;
     box-shadow: 3em 3em 3em rgba(0, 0, 0, 0.5);
   }
+
+@media (max-width: 1400px){
+.container{
+     transform: translate(62%, 5%);
+    }
+}
 
   /* width: 60em;
   padding: 3.2em 2.2em;
