@@ -10,7 +10,7 @@
     background: #017199;
   }
 
-  .container {
+   .container {
     max-width: 37.5em;
     /* width: 60em; */
     padding: 3.2em 2.2em;
@@ -23,11 +23,19 @@
     box-shadow: 3em 3em 3em rgba(0, 0, 0, 0.5);
   }
 
-@media (max-width: 1400px){
-.container{
-     transform: translate(62%, 5%);
+  @media (min-width: 720px){
+    .container{
+      max-width: 37.5em;
+      transform: translate(62%, 5%);
     }
-}
+  }
+
+  @media (min-width: 1400px){
+    .container{
+      max-width: 37.5em;
+      transform: translate(110%, 5%);
+    }
+  }
 
   /* width: 60em;
   padding: 3.2em 2.2em;
