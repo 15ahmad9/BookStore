@@ -22,6 +22,20 @@
     margin-top: 60px;
   }
 
+  @media (min-width: 720px){
+    .container{
+      max-width: 37.5em;
+      transform: translate(62%, 5%);
+    }
+  }
+
+  @media (min-width: 1400px){
+    .container{
+      max-width: 37.5em;
+      transform: translate(110%, 5%);
+    }
+  }
+
   .search-container {
     display: flex;
     gap: 1em;
