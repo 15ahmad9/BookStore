@@ -7,15 +7,14 @@ $(document).ready(function () {
   var bookUrl = "https://www.googleapis.com/books/v1/volumes?q=";
   var apiKey = "key=AIzaSyDtXC7kb6a7xKJdm_Le6_BYoY5biz6s8Lw";
   var placeHldr = '<img src="https://via.placeholder.com/150">';
-  // outputList.innerHTML = `<h3 class="msg">Please Enter A Book Name</h3>`;
+
 
   $("#search").click(function () {
 
-    //empty html output
     outputList.innerHTML = "";
     document.body.style.backgroundImage = "url('')";
     searchData = $("#book-name").val();
-    //handling empty search input field
+    //إعطاء إشارة خطأ إذا كان صندوق البحث فارغ
     if (searchData == "" || searchData == null) {
       displayError();
     }
@@ -37,7 +36,7 @@ $(document).ready(function () {
           }
         },
         error: function () {
-          alert("Something went wrong... <br>" + "Try again!");
+          alert("Something went wrong... <br>" + "Please try again!");
         }
       });
     }
@@ -65,28 +64,24 @@ $(document).ready(function () {
       previewLink = item2.volumeInfo.industryIdentifiers[1].identifier
       bookImg2 = (item2.volumeInfo.imageLinks) ? item2.volumeInfo.imageLinks.thumbnail : placeHldr;
 
-      outputList.innerHTML += '<div class="row mt-4">' +
-        formatOutput(bookImg1, title1, author1, publisher1, publishedDate1, bookLink1, previewLink) +
-        '</div>';
+      outputList.innerHTML += '<div class="row outP">' + formatOutput(bookImg1, title1, author1, publisher1, publishedDate1, bookLink1, previewLink) + '</div>';
 
-      outputList.innerHTML += '<div class="row mt-4">' +
-        formatOutput(bookImg2, title2, author2, publisher2, publishedDate2, bookLink2, previewLink) +
-        '</div>';
+      outputList.innerHTML += '<div class="row outP">' + formatOutput(bookImg2, title2, author2, publisher2, publishedDate2, bookLink2, previewLink) + '</div>';
 
       console.log(outputList);
     }
   }
 
   function formatOutput(bookImg, title, author, publisher, publishedDate, bookLink, previewLink) {
-    // console.log(title + ""+ author +" "+ publisher +" "+ bookLink+" "+ bookImg)
-    var viewUrl = 'https://books.google.jo/books?id=' + previewLink + `&hl=&cd=4&source=gbs_api`; //constructing link for bookviewer
-    var Card = `<div class="col-lg-6">
+
+    var viewUrl = 'https://books.google.jo/books?q=' + previewLink + `&hl=&cd=4&source=gbs_api`; 
+    var Card = `<div class="cardReq1">
         <div class="card" style="">
           <div class="row no-gutters">
-            <div class="col-md-4" style="padding-top: 15px;">
+            <div class="cardReq2" style="padding-top: 15px;">
               <img src="${bookImg}" class="card-img" alt="...">
             </div>
-                 <div class="col-md-8" style="padding: 10px 10px 10px 10px">
+                 <div class="cardReq3" style="padding: 10px 10px 10px 10px">
                  <div class="card-body">
 
                 <h2 class="card-title">${title}</h2>
@@ -103,9 +98,7 @@ $(document).ready(function () {
   }
 
   function displayError() {
-    alert("Search term can not be empty!")
+    alert("There must be a search keyword!")
   }
 
 });
-
-

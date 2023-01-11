@@ -241,7 +241,7 @@ transition: 0.7s ease;
     gap: 20px;
     position: absolute;
     transform: translate(0, 0);
-    top: 50%;
+    top: 35%;
     left: 30%;
     right:30%;
     text-align-last: center;
