@@ -36,11 +36,10 @@ let getMovie = () => {
             <h3>Text summary:</h3>
             <p>${data.Plot}</p>
             <h3>Actors:</h3>
-            <p>${data.Actors}</p>
-            
-        `;
+            <p>${data.Actors}</p> `;
         }
-        else {
+        else 
+        {
           result.innerHTML = `<h3 class='msg'>${data.Error}</h3>`;
         }
       })
